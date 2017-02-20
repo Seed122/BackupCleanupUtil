@@ -45,7 +45,7 @@ namespace BackupCleanupUtil
             var objects = new Dictionary<string, ICollection<BackupFile>>();
             foreach (var filePath in allfiles)
             {
-                var match = Regex.Match(filePath, @"^.+\\(.+)_(\d{8})\.\w+$");
+                var match = Regex.Match(filePath, @"^.+\\(.+)_?(\d{8})\.\w+$");
                 if (!match.Success) continue;
                 string obj = match.Groups[1].Value;
                 string dateStr = match.Groups[2].Value;
